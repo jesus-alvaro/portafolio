@@ -382,6 +382,57 @@ if (this.state.viewer && k.key === 'ArrowRight') this.go(1);
 if (this.state.viewer && k.key === 'ArrowLeft') this.go(-1);
 });
 } catch (err) {}
+try { this.initGestures(); } catch (err) {}
+}
+lvl() {
+const { cat, ev, viewer, menu, qopen } = this.state;
+if (qopen || menu) return 1;
+if (cat === null) return 0;
+const single = this._cats && this._cats[cat] ? this._cats[cat].events.length === 1 : false;
+return 1 + ((ev !== null && !single) ? 1 : 0) + (viewer ? 1 : 0);
+}
+stepBack() {
+const { cat, ev, viewer, menu, qopen, out } = this.state;
+if (out) return;
+if (qopen || menu || cat === null) { this.shut(); return; }
+const single = this._cats && this._cats[cat] ? this._cats[cat].events.length === 1 : false;
+if (viewer) { this.nav({ viewer: false, idx: 0 }); return; }
+if (ev !== null && !single) { this.nav({ ev: null, idx: 0 }); this.top(); return; }
+this.shut();
+}
+initGestures() {
+let sx = 0, sy = 0, st = 0, tg = null;
+window.addEventListener('touchstart', (t) => { const f = t.touches[0]; sx = f.clientX; sy = f.clientY; st = Date.now(); tg = t.target; }, { passive: true });
+window.addEventListener('touchend', (t) => {
+try {
+if (this.lvl() === 0 || this.state.out || this.state.qopen || this.state.menu) return;
+const f = t.changedTouches[0]; const dx = f.clientX - sx, dy = f.clientY - sy;
+if (Date.now() - st > 700) return;
+const inVis = tg && tg.closest && tg.closest('#vis');
+if (this.state.viewer) {
+if (dy > 110 && Math.abs(dx) < 60) this.stepBack();
+return;
+}
+if (dx > 90 && Math.abs(dy) < 60 && !inVis) this.stepBack();
+} catch (err) {}
+}, { passive: true });
+let armed = false, ignore = false;
+let top = false; try { top = window.self === window.top && !!window.history && !!window.history.pushState; } catch (err) {}
+this.syncHist = () => {
+if (!top) return;
+setTimeout(() => {
+try {
+const open = this.lvl() > 0;
+if (this.state.out) return;
+if (open && !armed) { window.history.pushState({ ov: 1 }, ''); armed = true; }
+else if (!open && armed) { armed = false; ignore = true; window.history.back(); }
+} catch (err) {}
+}, 0);
+};
+if (top) window.addEventListener('popstate', () => {
+if (ignore) { ignore = false; return; }
+if (armed) { armed = false; this.stepBack(); this.syncHist(); }
+});
 }
 shut() {
 if (this.state.out) return;
@@ -411,10 +462,12 @@ if (el) { el.style.scrollBehavior = 'auto'; el.scrollTop = 0; el.style.scrollBeh
 }
 jump(i) {
 try {
-setTimeout(() => {
+const doJump = () => {
 const el = document.getElementById('vis');
-if (el) el.scrollLeft = i * el.clientWidth;
-}, 80);
+const n = this._n || 0;
+if (el) el.scrollLeft = (n > 1 ? i + 1 : i) * el.clientWidth;
+};
+setTimeout(doJump, 0); setTimeout(doJump, 40); setTimeout(doJump, 100);
 } catch (err) {}
 }
 quote() {
@@ -459,6 +512,7 @@ const url = (id) => IMG[id] || '';
 const single = c ? c.events.length === 1 : false;
 const ph = e;
 const n = e ? e.ids.length : 0;
+this._cats = CATS; this._n = n; this.syncHist && this.syncHist();
 return {
 ...this.quote(),
 cats: CATS.map((k, i) => ({
@@ -504,13 +558,23 @@ src: url(id),
 alt: ph.title + ', foto ' + (i + 1),
 open: () => { this.nav({ viewer: true, idx: i }); this.jump(i); }
 })) : [],
-slides: e ? e.ids.map((id, i) => ({ src: url(id), alt: e.title + ', foto ' + (i + 1) })) : [],
+slides: e ? (n > 1 ? [n - 1].concat(e.ids.map((x, i) => i), [0]) : [0]).map((i) => ({ src: url(e.ids[i]), alt: e.title + ', foto ' + (i + 1) })) : [],
 counter: e ? (Math.min(idx, n - 1) + 1) + ' / ' + n : '',
 onScroll: (ev2) => {
 try {
 const t = ev2.target;
-const k = Math.round(t.scrollLeft / t.clientWidth);
-if (k !== this.state.idx) this.setState({ idx: k });
+const w = t.clientWidth || 1;
+const k = Math.round(t.scrollLeft / w);
+const real = n > 1 ? ((k - 1) % n + n) % n : 0;
+if (real !== this.state.idx) this.setState({ idx: real });
+if (n > 1) {
+clearTimeout(this._wrap);
+this._wrap = setTimeout(() => {
+const kk = Math.round(t.scrollLeft / w);
+if (kk <= 0) t.scrollLeft = n * w;
+else if (kk >= n + 1) t.scrollLeft = w;
+}, 120);
+}
 } catch (err) {}
 },
 prev: () => this.go(-1),
