@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jesús Alvaro · Fotografía y video en Monterrey</title>
+<meta name="description" content="Portafolio de Jesús Alvaro: fotografía y video de conciertos, XV años, bodas y eventos sociales en Monterrey.">
+<meta property="og:title" content="Jesús Alvaro · Fotografía y video">
+<meta property="og:description" content="XV años, bodas y conciertos en Monterrey.">
+<meta property="og:image" content="img/portada.webp">
+<link rel="icon" href="img/logo.png">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+body{margin:0}
+a{text-decoration:none;color:inherit}
+a:hover{opacity:.8}
+button{font-family:inherit}
+button:hover{opacity:.92}
+.vf{position:relative}
+.vf i{position:absolute;display:block;width:26px;height:26px;border:0 solid currentColor;z-index:2}
+.vf .tl{top:10px;left:10px;border-top-width:2px;border-left-width:2px}
+.vf .tr{top:10px;right:10px;border-top-width:2px;border-right-width:2px}
+.vf .bl{bottom:10px;left:10px;border-bottom-width:2px;border-left-width:2px}
+.vf .br{bottom:10px;right:10px;border-bottom-width:2px;border-right-width:2px}
+@media(max-width:760px){
+header{padding:12px 16px!important}
+header img{height:42px!important}
+header nav{gap:0 18px!important}
+header nav a{padding:8px 0!important}
+#inicio{aspect-ratio:4/5!important}
+#inicio .hx{left:20px!important;right:20px!important;bottom:28px!important;max-width:none!important}
+#inicio h1{font-size:24px!important}
+#portafolio{padding:56px 16px!important;gap:28px!important}
+h2{font-size:32px!important}
+#servicios>div,#contacto>div{padding:56px 16px!important}
+#sobre-mi{padding:56px 16px!important;gap:32px!important}
+#sobre-mi>div:first-child{max-width:260px!important}
+#contacto h2{font-size:34px!important}
+#contacto .vf{padding:32px 20px!important}
+footer{padding:20px 16px!important}
+}
+.ov-btn{font-family:inherit;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:13px 18px;border:1px solid #6a6761;background:transparent;color:#f4f2ee}
+.ov-btn:hover{opacity:.85}
+.og{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.vis{scrollbar-width:none}
+.vis::-webkit-scrollbar{display:none}
+.arr{position:absolute;top:50%;margin-top:-24px;width:48px;height:48px;font-size:24px;line-height:1;color:#f4f2ee;background:rgba(10,10,10,.75);border:1px solid #6a6761;cursor:pointer;z-index:3}
+@media(min-width:900px){.og{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(max-width:760px){.arr{width:40px;height:40px;margin-top:-20px;font-size:20px}.ov-top{padding:12px 16px!important}.ov-t{font-size:20px!important}.ov-btn{padding:11px 13px}}
+
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@keyframes zoomin{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+@keyframes drift{from{transform:scale(1)}to{transform:scale(1.07)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.55}}
+@keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+header{animation:drop .7s ease-out both}
+#inicio .hx>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+#inicio .hx>*:nth-child(1){animation-delay:.1s}
+#inicio .hx>*:nth-child(2){animation-delay:.25s}
+#inicio .hx>*:nth-child(3){animation-delay:.4s}
+#inicio .hx>*:nth-child(4){animation-delay:.55s}
+#inicio img{animation:drift 22s ease-in-out infinite alternate}
+#inicio span[style*="width: 8px"]{animation:pulse 2.4s ease-in-out infinite}
+.vf i{transition:top .35s,left .35s,right .35s,bottom .35s}
+a,.ov-btn,.arr{transition:transform .25s,opacity .25s,background .25s}
+a[href^="https://wa.me"]:hover,a[href^="mailto"]:hover,a[href^="https://instagram"]:hover{transform:translateY(-3px);opacity:1}
+.ov{animation:fadein .3s ease-out both}
+@keyframes fadeout{from{opacity:1}to{opacity:0}}
+@keyframes vfa{from{opacity:0}to{opacity:1}}
+@keyframes vfb{from{opacity:0}to{opacity:1}}
+.v0{animation:vfa .45s ease-out both}
+.v1{animation:vfb .45s ease-out both}
+.ov.out{animation:fadeout .26s ease-in both}
+.qm.out{animation:fadeout .24s ease-in both}
+.mn{animation:fadein .28s ease-out both}
+.mn .mi{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+.mn .mi:nth-child(2){animation-delay:.05s}.mn .mi:nth-child(3){animation-delay:.11s}.mn .mi:nth-child(4){animation-delay:.17s}
+.mn.out{animation:fadeout .22s ease-in both}
+.mn.out .mi{animation:none}
+#ovs,.vis,.qc{overscroll-behavior:contain}
+.ov img{animation:fadein .6s ease-out both}
+.ov .og button{animation:pop .5s ease-out both}
+.ov .se .sd{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,.55);opacity:0;transition:opacity .5s}
+.ov .se .sn{position:absolute;left:0;right:0;top:50%;padding:0 14px;text-align:center;font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;opacity:0;transform:translateY(-35%);transition:opacity .5s,transform .5s;z-index:2;line-height:1.6}
+.ov .se:hover .sd,.ov .se:focus-visible .sd{opacity:1}
+.ov .se:hover .sn,.ov .se:focus-visible .sn{opacity:1;transform:translateY(-50%)}
+.ov .og:has(.se){gap:6px}
+@media(hover:none){.ov .se .sd{opacity:.35}.ov .se .sn{opacity:1;transform:translateY(-50%);font-size:10px;letter-spacing:.22em}}
+.ov .og button:nth-child(2){animation-delay:.06s}
+.ov .og button:nth-child(3){animation-delay:.12s}
+.ov .og button:nth-child(4){animation-delay:.18s}
+.ov .og button:nth-child(5){animation-delay:.24s}
+.ov .og button:nth-child(6){animation-delay:.3s}
+@supports (animation-timeline: view()){
+#portafolio>div:first-child,.g5>button,#servicios h2,#servicios [style*="border: 1px solid"],#sobre-mi>*,#contacto .vf,#portafolio>p{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.g5{display:flex;gap:6px;height:660px;width:100%}
+.g5>button{flex:1 1 0;min-width:0;position:relative;overflow:hidden;border:0;padding:0;background:#14110f;color:#f4f2ee;cursor:pointer;font-family:inherit;transition:flex .75s cubic-bezier(.2,.7,.2,1)}
+.g5>button:hover{flex:2.3 1 0}
+.g5>button img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.g5>button:hover img{transform:scale(1.05)}
+.g5>button .dm{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,.5);opacity:0;transition:opacity .5s}
+.g5>button:hover .dm{opacity:1}
+.g5>button .cl{position:absolute;left:0;right:0;top:50%;text-align:center;font-size:14px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;opacity:0;transform:translateY(-35%);transition:opacity .5s,transform .5s;z-index:2;padding-left:.34em}
+.g5>button:hover .cl{opacity:1;transform:translateY(-50%)}
+.g5>button i{opacity:0;transition:opacity .4s,top .4s,left .4s,right .4s,bottom .4s}
+.g5>button:hover i{opacity:1}
+.g5>button:hover i.tl{top:20px;left:20px}
+.g5>button:hover i.tr{top:20px;right:20px}
+.g5>button:hover i.bl{bottom:20px;left:20px}
+.g5>button:hover i.br{bottom:20px;right:20px}
+.ov .og button img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.ov .og button:hover img{transform:scale(1.07)}
+@media(max-width:760px){
+.g5{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;height:auto;box-sizing:border-box;padding:0 16px}
+.g5>button{aspect-ratio:4/5}
+.g5>button:last-child{grid-column:1/-1;aspect-ratio:16/10}
+.g5>button .dm{opacity:.38}
+.g5>button .cl{opacity:1;transform:translateY(-50%);font-size:12px}
+.g5>button i{display:none}
+#portafolio{padding:48px 0 16px!important}
+#portafolio>div,#portafolio>p{padding-left:16px!important;padding-right:16px!important}
+}
+.burger{display:none;width:44px;height:44px;background:transparent;border:0;cursor:pointer;flex-direction:column;align-items:flex-end;justify-content:center;gap:7px;padding:0}
+.burger span{display:block;height:1.5px;background:#f4f2ee;width:24px}
+.burger span:last-child{width:15px}
+.cta{transition:background .3s,color .3s}
+.cta:hover{background:#e5533d;color:#0a0a0a}
+.mi{font-size:20px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#f4f2ee;padding-left:.24em}
+.mi-c{color:#e5533d;border-bottom:1px solid #e5533d;padding-bottom:6px;margin-top:10px;font-size:14px}
+@media(max-width:760px){
+header{display:grid!important;grid-template-columns:44px 1fr 44px;align-items:center;padding:12px 16px!important}
+header>a{grid-column:2;justify-self:center}
+header img{height:38px!important}
+.dnav{display:none!important}
+.burger{display:flex;grid-column:3}
+}
+@media(max-width:760px){
+header{padding-top:max(12px,env(safe-area-inset-top))!important}
+.ov-top{padding-top:max(14px,env(safe-area-inset-top))!important}
+}
+.ov-cat{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+.ov-ghost{font-family:inherit;cursor:pointer;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:12px 20px;border:1px solid rgba(244,242,238,.55);background:transparent;color:#f4f2ee;transition:background .3s,border-color .3s}
+.ov-ghost:hover{background:rgba(244,242,238,.12);border-color:#f4f2ee}
+
+.qs{display:flex;flex-direction:column;gap:14px}
+.qn{display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;background:#14130f;color:#f4f2ee;font-size:12px;font-weight:700}
+.qs{position:relative}
+.ql{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.qo{display:flex;flex-wrap:wrap;gap:10px}
+.qo button{font-family:inherit;color:#14130f;background:transparent;border:1px solid #14130f;padding:14px 20px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:flex;flex-direction:column;gap:4px;text-align:left;transition:background .25s,color .25s,transform .25s}
+.qo button small{font-size:11px;font-weight:500;letter-spacing:.02em;text-transform:none;opacity:.75}
+.qo button:hover{transform:translateY(-2px)}
+.qo button.on{background:#14130f;color:#f4f2ee;border-color:#14130f}
+.qo button.on small{opacity:.85}
+.qd{font-family:inherit;font-size:15px;padding:13px 16px;border:1px solid #14130f;background:transparent;color:#14130f;max-width:240px}
+.qm{position:fixed;top:0;left:0;right:0;bottom:0;z-index:65;background:rgba(10,10,10,.6);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) 16px 16px;box-sizing:border-box;animation:fadein .25s both;font-family:'Montserrat',system-ui,sans-serif}
+.qc{position:relative;background:#f0eee9;color:#14130f;width:100%;max-width:560px;max-height:100%;overflow-y:auto;box-sizing:border-box;padding:40px 32px 32px;display:flex;flex-direction:column;gap:26px;animation:pop .3s both}
+.qx{position:absolute;top:12px;right:12px}
+.qa{animation:rise .45s cubic-bezier(.2,.7,.2,1) both}
+.qc .qt-sum{padding-top:24px}
+.qt-sum{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #14130f;padding-top:28px}
+.qwa{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f4f2ee;background:#e5533d;padding:20px 32px;text-align:center}
+@media (max-width:760px){.qt{padding:40px 22px!important;gap:32px!important}.qt h2{font-size:32px!important}.qo button{flex:1 1 calc(50% - 5px);padding:13px 14px}.qwa{width:100%;box-sizing:border-box}.qt-sum{flex-direction:column;align-items:stretch}}
+</style>
+
+<noscript><style>#app{display:none}</style></noscript>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/x-tpl" id="tpl">
+<div style="background: #0a0a0a; color: #f4f2ee; font-family: 'Montserrat', system-ui, sans-serif; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column">
+
+<div style="position: relative">
+<!-- NAV -->
+<header style="position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 12px 32px; padding: 20px 32px; max-width: 1280px; width: 100%; box-sizing: border-box; margin: 0 auto">
+<a onClick="{{smooth}}" href="#inicio" aria-label="Jesús Alvaro, inicio" style="display: block; padding: 6px 0"><img src="img/logo.png" alt="Jesús Alvaro" style="height: 52px; width: auto; display: block"></a>
+<nav class="dnav" style="display: flex; align-items: center; gap: 4px 30px">
+<a onClick="{{smooth}}" href="#portafolio" style="font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #d4d1cb; padding: 12px 0">Portafolio</a><a onClick="{{smooth}}" href="#sobre-mi" style="font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #d4d1cb; padding: 12px 0">Sobre mí</a><a onClick="{{smooth}}" href="#contacto" class="cta" style="font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #f4f2ee; border: 1px solid #e5533d; padding: 12px 20px">Cotiza tu sesión</a>
+</nav>
+<button class="burger" onClick="{{openMenu}}" aria-label="Abrir menú"><span></span><span></span></button>
+</header>
+<section id="inicio" style="position: relative; width: 100%; aspect-ratio: 3 / 2; max-height: 920px; overflow: hidden; background: #0a0a0a">
+<img src="img/portada.webp" alt="Cantante en concierto levantada por bailarines sobre el escenario" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% 40%; display: block">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0) 22%, rgba(10,10,10,0) 60%, rgba(10,10,10,0.7) 100%)"></div>
+<div class="hx" style="position: absolute; left: 6%; bottom: 370px; max-width: 300px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="display: block; width: 8px; height: 8px; background: #e5533d"></span>
+<span style="font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase">XV años · Bodas · Conciertos</span>
+</div>
+<h1 style="margin: 0; font-weight: 800; font-size: 30px; line-height: 1.12; letter-spacing: 0.01em; text-transform: uppercase; width: 318px">Lo viviste una vez. Revívelo siempre.</h1>
+</div>
+</section>
+
+</div>
+
+<!-- PORTAFOLIO -->
+<section id="portafolio" style="padding: 72px 0 32px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
+<div style="max-width: 1280px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 10px">
+<span style="display: block; width: 8px; height: 8px; background: #e5533d"></span>
+<span style="font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase">Portafolio</span>
+</div>
+<div class="g5">
+<sc-for list="{{cats}}" as="c">
+<button class="vf" onClick="{{c.open}}" aria-label="{{c.aria}}">
+<img src="{{c.cover}}" alt="" style="object-position: {{c.pos}}">
+<span class="dm"></span>
+<i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>
+<span class="cl">{{c.title}}</span>
+</button>
+</sc-for>
+</div>
+<p style="margin: 0 auto; max-width: 1280px; width: 100%; box-sizing: border-box; padding: 0 32px; font-size: 14px; color: #b5b2ac">¿Quieres ver más? Mira el día a día en <a href="https://instagram.com/jesus.alvaro_visuals" style="color: #f4f2ee; font-weight: 700; border-bottom: 2px solid #e5533d">@jesus.alvaro_visuals</a></p>
+</section>
+
+<!-- SERVICIOS (fondo claro, como el reverso de la tarjeta) -->
+
+
+<!-- SOBRE MI -->
+<section id="sobre-mi" style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 56px; padding: 96px 32px; max-width: 1280px; width: 100%; box-sizing: border-box; margin: 0 auto">
+<div class="vf" style="flex: 0 1 340px; min-width: 0; aspect-ratio: 4 / 5; align-self: center; box-sizing: border-box; background: #0a0a0a; color: #f4f2ee; overflow: hidden">
+<img src="img/retrato.webp" alt="Retrato de Jesús Alvaro, fotógrafo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%">
+</div>
+<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="display: block; width: 10px; height: 10px; background: #e5533d"></span>
+<span style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase">Sobre mí</span>
+</div>
+<h2 style="margin: 0; font-weight: 800; font-size: 48px; line-height: 1.05; text-transform: uppercase">Hola, soy Jesús.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.75; color: #d4d1cb; width: 677px">Fotógrafo y videógrafo en Monterrey. Capturo tus momentos reales para que los revivas siempre: trato cercano, sin poses forzadas y fotos listas para presumir.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid #6a6761; padding: 10px 14px">2 años de experiencia</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid #6a6761; padding: 10px 14px">Foto y video</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid #6a6761; padding: 10px 14px">Monterrey y área metropolitana</span></div>
+</div>
+</section>
+
+<!-- CONTACTO (fondo claro) -->
+<section id="contacto" style="background: #f0eee9; color: #14130f; width: 100%; box-sizing: border-box">
+<div style="padding: 96px 32px; max-width: 1280px; width: 100%; box-sizing: border-box; margin: 0 auto">
+<div class="vf qt" style="color: #14130f; box-sizing: border-box; padding: 64px 40px; display: flex; flex-direction: column; align-items: flex-start; gap: 28px">
+<i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>
+<h2 style="margin: 0; font-weight: 800; font-size: 48px; line-height: 1.04; text-transform: uppercase">Tu sesión empieza aquí</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #4a4843; max-width: 520px">Elige lo que necesitas en un par de toques y mándame el resumen por WhatsApp para cotizar.</p>
+<button class="qwa" onClick="{{openQuote}}" style="border: 0; font-family: inherit; cursor: pointer">Arma tu sesión</button>
+<p style="margin: 0; font-size: 14px; color: #4a4843">También puedes escribirme por <a href="https://instagram.com/jesus.alvaro_visuals" style="font-weight: 700; border-bottom: 2px solid #e5533d">Instagram</a> o <a href="mailto:contacto.jesusalvaro@gmail.com" style="font-weight: 700; border-bottom: 2px solid #e5533d">correo</a>. Respondo el mismo día.</p>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="margin-top: auto; padding: 32px; max-width: 1280px; width: 100%; box-sizing: border-box; margin-left: auto; margin-right: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #b5b2ac">
+<span>© 2026 Jesús Alvaro · Fotografía y video · Monterrey</span>
+<a onClick="{{smooth}}" href="#inicio" style="color: #b5b2ac; padding: 8px 0">Volver arriba</a>
+</footer>
+
+<!-- COTIZADOR FLOTANTE -->
+<sc-if value="{{quoteOpen}}">
+<div class="{{qmCls}}" onClick="{{closeQuote}}">
+<div class="qc" onClick="{{stop}}">
+<button class="ov-ghost qx" onClick="{{closeQuote}}" aria-label="Cerrar" style="color: #14130f; border-color: #14130f">✕</button>
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #e5533d">Arma tu sesión</span>
+<div class="qs"><span class="ql">¿Qué vas a celebrar?</span>
+<div class="qo"><sc-for list="{{tipos}}" as="o"><button class="{{o.cls}}" onClick="{{o.pick}}">{{o.label}}</button></sc-for></div></div>
+<sc-if value="{{showSes}}"><div class="qs qa"><span class="ql">¿Qué tipo de sesión?</span>
+<div class="qo"><sc-for list="{{sess}}" as="o"><button class="{{o.cls}}" onClick="{{o.pick}}">{{o.label}}</button></sc-for></div></div></sc-if>
+<sc-if value="{{showServ}}"><div class="qs qa"><span class="ql">¿Qué necesitas?</span>
+<div class="qo"><sc-for list="{{servs}}" as="o"><button class="{{o.cls}}" onClick="{{o.pick}}">{{o.label}}</button></sc-for></div></div></sc-if>
+<sc-if value="{{showSum}}"><div class="qt-sum qa">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #e5533d">Precio de referencia desde</span>
+<span style="font-weight: 800; font-size: 36px; line-height: 1">{{sumPrice}}</span>
+<span style="font-size: 12px; line-height: 1.6; color: #4a4843">Precio de referencia sujeto a cambios; no constituye una cotización final ni un compromiso de precio. El costo definitivo depende del tipo de evento, duración, ubicación y servicios adicionales, y se confirma por escrito antes de apartar la fecha.</span>
+</div>
+<a href="{{waHref}}" class="qwa">Cotizar por WhatsApp</a>
+</div></sc-if>
+</div>
+</div>
+</sc-if>
+
+<!-- MENÚ OCULTO (celular) -->
+<sc-if value="{{menuOpen}}">
+<div class="{{mnCls}}" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 70; background: rgba(10,10,10,0.97); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; font-family: 'Montserrat', system-ui, sans-serif">
+<button class="ov-ghost" onClick="{{closeMenu}}" aria-label="Cerrar menú" style="position: absolute; top: max(14px, env(safe-area-inset-top)); right: 16px">✕</button>
+<a class="mi" href="#portafolio" onClick="{{menuGo}}">Portafolio</a>
+<a class="mi" href="#sobre-mi" onClick="{{menuGo}}">Sobre mí</a>
+<a class="mi mi-c" href="#contacto" onClick="{{menuGo}}">Cotiza tu sesión</a>
+</div>
+</sc-if>
+
+<!-- VISOR: portada de categoría -> galería -> fotos una por una -->
+<sc-if value="{{open}}">
+<div class="{{ovCls}}" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 60; background: #0a0a0a; color: #f4f2ee; font-family: 'Montserrat', system-ui, sans-serif">
+<div class="ov-top" style="position: absolute; top: 0; left: 0; right: 0; z-index: 6; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 32px; background: {{topBg}}">
+<span class="ov-cat">{{topTitle}}</span>
+<div style="display: flex; gap: 8px; align-items: center">
+<sc-if value="{{showCat}}">
+<button class="ov-ghost" onClick="{{toGallery}}">Ver galería</button>
+</sc-if>
+<sc-if value="{{canSes}}">
+<button class="ov-ghost" onClick="{{toSes}}">← Sesiones</button>
+</sc-if>
+<sc-if value="{{canBack}}">
+<button class="ov-ghost" onClick="{{back}}">← Galería</button>
+</sc-if>
+<button class="ov-ghost" onClick="{{close}}" aria-label="Cerrar">✕</button>
+</div>
+</div>
+<sc-if value="{{showCat}}">
+<div id="ovs" class="{{vcls}}" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow-y: auto; scroll-behavior: smooth">
+<div style="position: relative; width: 100%; height: 100%; min-height: 460px; overflow: hidden; background: #14110f">
+<img src="{{catCover}}" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{catPos}}; display: block">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10,10,10,0.38)"></div>
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center">
+<span class="ov-big" style="font-size: 20px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; padding-left: 0.4em">{{catTitle}}</span>
+<span style="display: block; width: 36px; height: 2px; background: #e5533d"></span>
+</div>
+</div>
+<div id="gal" style="padding: 56px 32px 96px; max-width: 1280px; margin: 0 auto; box-sizing: border-box">
+<sc-if value="{{showList}}">
+<div class="og">
+<sc-for list="{{events}}" as="e">
+<button class="se" onClick="{{e.open}}" aria-label="{{e.aria}}" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; padding: 0; border: 0; background: #14110f; color: #f4f2ee; cursor: pointer; overflow: hidden; font-family: inherit">
+<img src="{{e.cover}}" alt="" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%">
+<span class="sd"></span>
+<span class="sn">{{e.title}}</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{showTiles}}">
+<div class="og">
+<sc-for list="{{tiles}}" as="t">
+<button onClick="{{t.open}}" aria-label="{{t.alt}}" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; padding: 0; border: 0; background: #14110f; cursor: pointer; overflow: hidden">
+<img src="{{t.src}}" alt="{{t.alt}}" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%">
+</button>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{showPhotos}}">
+<div class="{{vcls}}" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; padding-top: 72px; box-sizing: border-box">
+<div style="position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column">
+<div id="vis" class="vis" onScroll="{{onScroll}}" style="flex: 1; min-height: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch">
+<sc-for list="{{slides}}" as="s">
+<div style="flex: 0 0 100%; width: 100%; height: 100%; scroll-snap-align: center; scroll-snap-stop: always; display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box">
+<img src="{{s.src}}" alt="{{s.alt}}" loading="lazy" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block">
+</div>
+</sc-for>
+</div>
+<button class="arr" onClick="{{prev}}" aria-label="Foto anterior" style="left: 12px">‹</button>
+<button class="arr" onClick="{{next}}" aria-label="Foto siguiente" style="right: 12px">›</button>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 24px; border-top: 1px solid #2a2826; flex-wrap: wrap">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #d4d1cb">{{counter}}</span>
+<a href="https://wa.me/528181200700" style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0a0a0a; background: #e5533d; padding: 12px 18px">Cotiza una sesión como esta</a>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+</div>
+</script>
+<script>
+class DCLogic {
+  constructor() { this.state = {}; }
+  setState(p) { Object.assign(this.state, typeof p === 'function' ? p(this.state) : p); if (this._mounted) this._render(); }
+}
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { cat: null, ev: null, viewer: false, idx: 0, menu: false, q: { tipo: null, ses: null, serv: null }, qopen: false, out: false, vk: 0 };
+try {
+window.addEventListener('keydown', (k) => {
+if (this.state.cat === null && !this.state.menu && !this.state.qopen) return;
+if (k.key === 'Escape') this.shut();
+if (this.state.viewer && k.key === 'ArrowRight') this.go(1);
+if (this.state.viewer && k.key === 'ArrowLeft') this.go(-1);
+});
+} catch (err) {}
+}
+shut() {
+if (this.state.out) return;
+this.setState({ out: true });
+setTimeout(() => { this.setState({ cat: null, ev: null, viewer: false, idx: 0, menu: false, qopen: false, out: false }); }, 260);
+}
+nav(p) { this.setState({ ...p, vk: (this.state.vk || 0) + 1 }); }
+glide(ev2) {
+try {
+const a = ev2 && ev2.currentTarget; const h = a && a.getAttribute && a.getAttribute('href');
+if (h && h.charAt(0) === '#') { const t = document.getElementById(h.slice(1)); if (t) { ev2.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
+} catch (err) {}
+}
+go(d) {
+try {
+const el = document.getElementById('vis');
+if (el) el.scrollBy({ left: d * el.clientWidth, behavior: 'smooth' });
+} catch (err) {}
+}
+top() {
+try {
+setTimeout(() => {
+const el = document.getElementById('ovs');
+if (el) { el.style.scrollBehavior = 'auto'; el.scrollTop = 0; el.style.scrollBehavior = ''; }
+}, 30);
+} catch (err) {}
+}
+jump(i) {
+try {
+setTimeout(() => {
+const el = document.getElementById('vis');
+if (el) el.scrollLeft = i * el.clientWidth;
+}, 80);
+} catch (err) {}
+}
+quote() {
+const q = this.state.q;
+const set = (patch) => this.setState({ q: Object.assign({}, q, patch) });
+const fmt = (n) => '$' + n.toLocaleString('en-US');
+const TIPOS = ['XV años', 'Boda', 'Evento social', 'Retrato o sesión'];
+const SES = [['Retrato individual', 700], ['Sesión de pareja o preboda', 1700], ['Sesión de XV años', 1500]];
+const SERVS = ['Foto', 'Video', 'Foto + video'];
+const P = { 'XV años': { 'Foto': 4500, 'Video': 5000, 'Foto + video': 9000 }, 'Boda': { 'Foto': 5000, 'Video': 5500, 'Foto + video': 10000 }, 'Evento social': { 'Foto': 1200, 'Video': 1200, 'Foto + video': 2200 } };
+const ret = q.tipo === 'Retrato o sesión';
+const sesOk = !ret || q.ses !== null;
+const showServ = !!q.tipo && sesOk;
+let total = null;
+if (showServ && q.serv) total = ret ? (q.serv === 'Foto' ? SES[q.ses][1] : q.serv === 'Video' ? 1200 : 2200) : P[q.tipo][q.serv];
+let msg = 'Hola Jesús, vi tu portafolio y quiero cotizar una sesión.';
+if (q.tipo) msg += '\nTipo de evento: ' + q.tipo;
+if (ret && q.ses !== null) msg += '\nTipo de sesión: ' + SES[q.ses][0];
+if (q.serv && showServ) msg += '\nServicio: ' + q.serv;
+msg += '\n¿Me compartes disponibilidad y cotización?';
+return {
+quoteOpen: this.state.qopen,
+openQuote: () => this.setState({ qopen: true, out: false }),
+closeQuote: () => this.shut(),
+stop: (e) => { try { e.stopPropagation(); } catch (err) {} },
+tipos: TIPOS.map((t) => ({ label: t, cls: q.tipo === t ? 'on' : '', pick: () => set({ tipo: t, ses: null, serv: null }) })),
+showSes: ret,
+sess: SES.map((r, i) => ({ label: r[0], cls: q.ses === i ? 'on' : '', pick: () => set({ ses: i, serv: null }) })),
+showServ: showServ,
+servs: SERVS.map((t) => ({ label: t, cls: q.serv === t ? 'on' : '', pick: () => set({ serv: t }) })),
+showSum: total !== null,
+sumPrice: total !== null ? fmt(total) + ' MXN' : '',
+waHref: 'https://wa.me/528181200700?text=' + encodeURIComponent(msg)
+};
+}
+renderVals() {
+const CATS = [{"key": "xv", "title": "XV años", "cover": "281d3629c44e48bfc5ffdd1b2ebb4bc6", "pos": "60% 40%", "desc": "Cada detalle del gran día, desde el vestido hasta la sonrisa.", "events": [{"title": "Pris", "ids": ["823a3a4e3ed3ca26453a44c9ad73cdbd", "52e06d0670ff70fe1970586b98ce8a95", "f53a708778557e7a59ca9b08ed53d23c", "a44666ca79c70e2d01855d92bd91697d", "444220f7c5167281ad3fcaa7939c0a3f", "253bd9b77895eaf3d90abede1b0d8402"]}, {"title": "Sofía", "ids": ["40f014059f2094a6f45fe3e7167c87a6", "489a85a046b2320a2d4e3f6861fc0f2d", "09e0f9dde67d533447353bdb043fd4a1", "ffa3f25d27505664bc788c7fd188dcb6", "60bae6ff2636a7ca92f2795e0769a80e", "aed38704a36bc6524bf6ad424a9cd1b6"]}]}, {"key": "bodas", "title": "Bodas", "cover": "83d323abcc61c0c23400d092a17353df", "pos": "center 30%", "desc": "Tu historia de amor, contada en imágenes que se quedan para siempre.", "events": [{"title": "Carlos y Jessica", "ids": ["fdd4b5fda77ff537a0dd1529faa0eaaf", "936bee73448ffa9de3aa63bf69da2b06", "582c150d6f74b9ec7a5a38b0821b81b5", "8e8a85cdec094d12522676a7e92ab69e", "89c1217420f955ae9f5515f499b6ba3e", "bd1b2af2f352f0a360f740446a443169", "637c961e27e690272a3ecda23d7d6704"]}, {"title": "Roberto y Sandra", "ids": ["d5b4234ff12b0345e35eda0694d053bf", "710aebd5bc7a5c07bee517e625b5220c", "04edb495e24664c82acae7bd725cd6a7", "039b4cc7ddca6a7eba3e3aa5947d5cc8", "ec2461f6a531e2b2d79cff938e2a01dd"]}]}, {"key": "eventos", "title": "Eventos", "cover": "fc3265858f2913e2e41fbf68b27d2a2d", "pos": "center 50%", "desc": "Celebraciones y momentos que merecen recordarse.", "events": [{"title": "Gender Reveal", "ids": ["cca62ec31a9c9349d58b5ab0b61a755b", "f46e6537755a5b99ae15269f60e6ba1d", "48e4d829347f35c7e2931d1546871d5e", "f86a01f3594fdeb74f64389061fad056", "18753b081621b8a622182e041034d199", "d4db221d70dfa6263fbb03f60f55f61a"]}, {"title": "Baby Shower", "ids": ["ff30d5c23b81804f68d824bd8b19beb0", "e1f80eb9a7d71df07c5be650ef15f903", "d009ae539dee8c21cb6efe2892021518", "8cc0c201492f74e32932de93451f5260", "c306c00bbedd66421b177f630efb432a", "2780c46bc6e57b3ae561a3decde294ec", "ba308baa01f0e1676eb0f85e4c510020", "e866ea2e0c0546a268debfcbde863d1a"]}]}, {"key": "retratos", "title": "Retratos", "cover": "6dec771637f9ed3d4f8392f74a0ff40b", "pos": "center 25%", "desc": "Retratos con carácter, luz cuidada y mucha naturalidad.", "events": [{"title": "Montse", "ids": ["a98164021ce821ab3d4cc8a2ea7c0b49", "e16481b3cccfdd5017e516d713abdb2f", "c7083a56e539e81472b71ff01032cd6a", "498f3086aa6699b28c82d35a54cea28d", "7b11a78a9f68adcea861c96cb1a85f41"]}, {"title": "Kami", "ids": ["f1a9938e97be4bf0c7927e8b17d88619", "14779eb74f33714993b34aae972bbfe3", "ed961a5e808b0222563e488e7c32ac79", "95ea8650d064a5f9d2d403f99e18c370", "37cc9e87e285c97bd3d88f45eef9cc74"]}, {"title": "DJ KAOS", "ids": ["0aac88ce4cf4b75306c82817120c43c0", "68938100628b0d4e0f1bf2ca43dc24ef", "d240f27f399731761392142c8f656c7e", "febeea60c00f3c77b9938c7a4c664de4", "7847c8825b35be12f513c5a57de2683d"]}, {"title": "Pris", "ids": ["4493f5aebeb27cc144fa48057f03f6cc", "263c940844c750e8be832c6156024ee9", "8b4f1bf0fa00f421a519d9dcf0898c70", "d9fbd8dbb3fa05e2517a178030149268", "9a34aa82006466f6e66e407cfa240c70", "0ceabff8abd19598f84c1e94862acb0b"]}, {"title": "Sundury", "ids": ["04a97446092a75460c1f45a5e8c66010", "760f9d87cff862e4b949f3840178221b", "4122d8a3979d4ec9cd7b892af40c6b9d", "d0b8250829d831e8db2393e858b49fb9", "55cf79e3572e84b2ce48fb24bc196740", "2f2026f3cfd5896e75933367c2b228e4", "563d49dce83c710e66d96de8b6452369"]}]}, {"key": "conciertos", "title": "Conciertos", "cover": "0df48e9d64486d60aeb07a045befe618", "pos": "center 45%", "desc": "Luces, energía y el momento exacto del show.", "events": [{"title": "Tini", "ids": ["70cc9245201af62a928b85588eca5b08", "3a9bd929f1d0fa43dbb0170c7ee4eb90", "1f6e736c8d656ab7cb9b79469daed296", "fbe49ffa6cb36505209895e8c8170719", "50cde22db40ba8c33f76c0428292b685", "08f78c697207594a4a74ac31790171bf"]}, {"title": "Soy Luna", "ids": ["a47cc21c380044522bf860bc6b9f3453", "6823a6d414975c98981fbe8b6326bb12", "31a95ee9425d8384f609fa5c81f63ad8", "47046b3ab477c2f8700e050a2c3cb64d", "56b7d89c38f550d4e973cf6db963b4bd", "b36ba3796270af5d24e69bf4da4befd3", "0a43df6570662f21e9f79fa6382556be", "275adb8c061a36677119581ab738da74", "0b0d75040c1b2afd2ced8d71d8dc1b08"]}, {"title": "WWE", "ids": ["5c815a5bb98d3cfb9e865d912d0d01f1", "3b067dca498f7a3d27c624558977ed25", "b05066881755dd5cc97a3230766246e8", "44c6777516e0ba361b44c6493036c46b", "5d0237440970169744f9822a2087f2bc", "ad080e14d49b49612e77a51e39fabcf9", "b1910f8a54eea96c0826ff0f28572068", "1ab1d39b22be6e0df92beb13f14c3b68", "fc75493fe557ff6a1cbb71f3c8e073a4", "29b4a1c8088ea1d6f715a1b4135b0929", "d93e1a9ab1fc055d239da0821bd7f299"]}, {"title": "Queen", "ids": ["5eb7724b5c7aa5116bfc16b580ea492a", "f0d2940dc7b1b5708cc2bf26de3a3573", "523bad0d6cf568ca8b136c7cd5631781", "9789b99b3ba3b54cd94668cff641d855", "0cd112651ec441fbc93c97d0d02e2ad4", "df775099b4b6dfd18cb5e935f057c8b7", "d14a9cdfe00a471321c633b1713012ff", "b6ef87fa3145ddcdc40d46f490294ef7", "698d00034cc3bcd4fb9898f0ed582c7b", "bd49a109ea651137a9975bf53cc20580", "90193b0ff2a1585bab15f38662aabebf", "cf7ddabb665e39c46d089c277ec20fb1", "fcf7d194c64cbb50c8c4794675c1c64d", "eaa281ce403acdb84437053eeb63e86a"]}, {"title": "Michael Jackson", "ids": ["81c0b4028d77b9531d27004ad70640ab", "51f62d0a6232225a39b99b14c2cedd77", "29b127f2204ffddd88e70103c74e067a", "10bf316dfd9592db3ec5e3550f7260ab", "d130864069a453d13b8bb2d659ace068", "dedca7c53eacf0a41afcdd5922b8573e", "642dde6a60ef9a2f0a848d715c157272", "05d9ba0ff06b18cf9ee7fb35bcb01a91", "1794a0b3a534345e5247d3f477bdb519", "aa952585c4d3cf4541de4eb93ffae478", "82ae21dfd6dda9fc968b03505628119a", "5fa2367d6d9ff82a31ed9da539d8c32f"]}, {"title": "Bronco", "ids": ["93561f4b649e1beb44796c04afdd105a", "ea771666aa9b55c37bfc8896b5b0c1ce", "ca15e6dd97a119e8af2c834734ee50c0", "4c15dd2d202423939525cbf5251782bc", "42c47409a2290282f5385115c629497b", "7eebc5517370ccd9762b402e85237b20", "9e10a66a5a7476e228e14876e6ddd4da"]}, {"title": "Yuri", "ids": ["b8f37638a9d88a691a1f862cb0c040a6", "5b59c076d421fed38deaf8b675c0cc0f", "eebd3be018e838202c546464fb9ee92c", "4998188d9c3c6baaaa5fc312f67dc467", "99117e552bb479e9cf3e43831629dc20", "1842e943422143dff82549546902dcb4", "a892b08b72c90b6b38efe546b81239b4"]}, {"title": "Alfredo Olivas", "ids": ["79e5f212639706f768ff2b22e6bbb177", "49177fee573a1b545765461f1b370919", "9cff3d83738624630509263298a2e29e", "fd14124262716a07f2a3dcc887a48f42", "d902030b1dbf39ac4f3219f90c5c97f5", "dd840a1aed69b36e0a416c2a8b85ed4d", "4013f9adb23eff1c98059c2aef3860f3"]}, {"title": "Jamiroquai", "ids": ["6b8245ef90ace2502c50bc1265dece26", "d522864418352b3ac7aa8b1875a4988c", "31777130f6e889e4d285b80090a91adb", "04afef3d5d39e616c2bde22b811f740a", "4b2b8fd1ba55b0995c40c08f70edf933", "f2272b86e633ba803b64846292aff54c"]}]}];
+const { cat, ev, viewer, idx } = this.state;
+const c = cat !== null ? CATS[cat] : null;
+const e = c && ev !== null ? c.events[ev] : null;
+const url = (id) => IMG[id] || '';
+const single = c ? c.events.length === 1 : false;
+const ph = e;
+const n = e ? e.ids.length : 0;
+return {
+...this.quote(),
+cats: CATS.map((k, i) => ({
+title: k.title,
+cover: url(k.cover),
+pos: k.pos,
+aria: 'Abrir ' + k.title,
+open: () => this.nav({ cat: i, ev: k.events.length === 1 ? 0 : null, viewer: false, idx: 0 })
+})),
+menuOpen: this.state.menu,
+qmCls: this.state.out && this.state.qopen ? 'qm out' : 'qm',
+mnCls: this.state.out && this.state.menu ? 'mn out' : 'mn',
+vcls: 'v' + ((this.state.vk || 0) % 2),
+openMenu: () => this.setState({ menu: true }),
+closeMenu: () => this.shut(),
+menuGo: (e2) => { this.glide(e2); this.shut(); },
+smooth: (e2) => this.glide(e2),
+open: !!c,
+ovCls: this.state.out && !!c ? 'ov out' : 'ov',
+showCat: !!c && !viewer,
+showPhotos: !!c && viewer && !!e,
+topBg: viewer ? '#0a0a0a' : 'linear-gradient(180deg, rgba(10,10,10,0.55), rgba(10,10,10,0))',
+topTitle: c ? (e && !single ? c.title + ' / ' + e.title : c.title) : '',
+catTitle: c ? (e && !single ? e.title : c.title) : '',
+catCover: c ? url(e && !single ? e.ids[0] : c.cover) : '',
+catPos: c ? (e && !single ? 'center 30%' : c.pos) : 'center',
+canBack: viewer,
+back: () => this.nav({ viewer: false, idx: 0 }),
+canSes: !!c && !viewer && !!e && !single,
+toSes: () => { this.nav({ ev: null, idx: 0 }); this.top(); },
+close: () => this.shut(),
+toGallery: () => { try { const g = document.getElementById('gal'); if (g) g.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {} },
+showList: !!c && !viewer && !e && !single,
+events: c ? c.events.map((x, j) => ({
+title: x.title,
+cover: url(x.ids[0]),
+aria: 'Ver fotos de ' + x.title,
+open: () => { this.nav({ ev: j, viewer: false, idx: 0 }); this.top(); }
+})) : [],
+showTiles: !!c && !viewer && !!e,
+tiles: ph ? ph.ids.map((id, i) => ({
+src: url(id),
+alt: ph.title + ', foto ' + (i + 1),
+open: () => { this.nav({ viewer: true, idx: i }); this.jump(i); }
+})) : [],
+slides: e ? e.ids.map((id, i) => ({ src: url(id), alt: e.title + ', foto ' + (i + 1) })) : [],
+counter: e ? (Math.min(idx, n - 1) + 1) + ' / ' + n : '',
+onScroll: (ev2) => {
+try {
+const t = ev2.target;
+const k = Math.round(t.scrollLeft / t.clientWidth);
+if (k !== this.state.idx) this.setState({ idx: k });
+} catch (err) {}
+},
+prev: () => this.go(-1),
+next: () => this.go(1)
+};
+}
+}
+
+const IMG = {"823a3a4e3ed3ca26453a44c9ad73cdbd": "fotos/xv-anos/pris/xv-pris-01.webp", "52e06d0670ff70fe1970586b98ce8a95": "fotos/xv-anos/pris/xv-pris-02.webp", "f53a708778557e7a59ca9b08ed53d23c": "fotos/xv-anos/pris/xv-pris-03.webp", "a44666ca79c70e2d01855d92bd91697d": "fotos/xv-anos/pris/xv-pris-04.webp", "444220f7c5167281ad3fcaa7939c0a3f": "fotos/xv-anos/pris/xv-pris-05.webp", "253bd9b77895eaf3d90abede1b0d8402": "fotos/xv-anos/pris/xv-pris-06.webp", "40f014059f2094a6f45fe3e7167c87a6": "fotos/xv-anos/sofia/xv-sofia-01.webp", "489a85a046b2320a2d4e3f6861fc0f2d": "fotos/xv-anos/sofia/xv-sofia-02.webp", "09e0f9dde67d533447353bdb043fd4a1": "fotos/xv-anos/sofia/xv-sofia-03.webp", "ffa3f25d27505664bc788c7fd188dcb6": "fotos/xv-anos/sofia/xv-sofia-04.webp", "60bae6ff2636a7ca92f2795e0769a80e": "fotos/xv-anos/sofia/xv-sofia-05.webp", "aed38704a36bc6524bf6ad424a9cd1b6": "fotos/xv-anos/sofia/xv-sofia-06.webp", "281d3629c44e48bfc5ffdd1b2ebb4bc6": "fotos/xv-anos/portada/portada-xv.webp", "fdd4b5fda77ff537a0dd1529faa0eaaf": "fotos/bodas/carlos-y-jessica/boda-cj-01.webp", "936bee73448ffa9de3aa63bf69da2b06": "fotos/bodas/carlos-y-jessica/boda-cj-02.webp", "582c150d6f74b9ec7a5a38b0821b81b5": "fotos/bodas/carlos-y-jessica/boda-cj-03.webp", "8e8a85cdec094d12522676a7e92ab69e": "fotos/bodas/carlos-y-jessica/boda-cj-04.webp", "89c1217420f955ae9f5515f499b6ba3e": "fotos/bodas/carlos-y-jessica/boda-cj-05.webp", "bd1b2af2f352f0a360f740446a443169": "fotos/bodas/carlos-y-jessica/boda-cj-06.webp", "637c961e27e690272a3ecda23d7d6704": "fotos/bodas/carlos-y-jessica/boda-cj-07.webp", "d5b4234ff12b0345e35eda0694d053bf": "fotos/bodas/roberto-y-sandra/boda-rs-01.webp", "710aebd5bc7a5c07bee517e625b5220c": "fotos/bodas/roberto-y-sandra/boda-rs-02.webp", "04edb495e24664c82acae7bd725cd6a7": "fotos/bodas/roberto-y-sandra/boda-rs-03.webp", "039b4cc7ddca6a7eba3e3aa5947d5cc8": "fotos/bodas/roberto-y-sandra/boda-rs-04.webp", "ec2461f6a531e2b2d79cff938e2a01dd": "fotos/bodas/roberto-y-sandra/boda-rs-05.webp", "83d323abcc61c0c23400d092a17353df": "fotos/bodas/portada/portada-bodas.webp", "cca62ec31a9c9349d58b5ab0b61a755b": "fotos/eventos/gender-reveal/ev-gender-01.webp", "f46e6537755a5b99ae15269f60e6ba1d": "fotos/eventos/gender-reveal/ev-gender-02.webp", "48e4d829347f35c7e2931d1546871d5e": "fotos/eventos/gender-reveal/ev-gender-03.webp", "f86a01f3594fdeb74f64389061fad056": "fotos/eventos/gender-reveal/ev-gender-04.webp", "18753b081621b8a622182e041034d199": "fotos/eventos/gender-reveal/ev-gender-05.webp", "d4db221d70dfa6263fbb03f60f55f61a": "fotos/eventos/gender-reveal/ev-gender-06.webp", "ff30d5c23b81804f68d824bd8b19beb0": "fotos/eventos/baby-shower/ev-baby-02.webp", "e1f80eb9a7d71df07c5be650ef15f903": "fotos/eventos/baby-shower/ev-baby-01.webp", "d009ae539dee8c21cb6efe2892021518": "fotos/eventos/baby-shower/ev-baby-03.webp", "8cc0c201492f74e32932de93451f5260": "fotos/eventos/baby-shower/ev-baby-04.webp", "c306c00bbedd66421b177f630efb432a": "fotos/eventos/baby-shower/ev-baby-05.webp", "2780c46bc6e57b3ae561a3decde294ec": "fotos/eventos/baby-shower/ev-baby-06.webp", "ba308baa01f0e1676eb0f85e4c510020": "fotos/eventos/baby-shower/ev-baby-07.webp", "e866ea2e0c0546a268debfcbde863d1a": "fotos/eventos/baby-shower/ev-baby-08.webp", "fc3265858f2913e2e41fbf68b27d2a2d": "fotos/eventos/portada/portada-eventos.webp", "a98164021ce821ab3d4cc8a2ea7c0b49": "fotos/retratos/montse/ret-montse-01.webp", "e16481b3cccfdd5017e516d713abdb2f": "fotos/retratos/montse/ret-montse-02.webp", "c7083a56e539e81472b71ff01032cd6a": "fotos/retratos/montse/ret-montse-03.webp", "498f3086aa6699b28c82d35a54cea28d": "fotos/retratos/montse/ret-montse-04.webp", "7b11a78a9f68adcea861c96cb1a85f41": "fotos/retratos/montse/ret-montse-05.webp", "f1a9938e97be4bf0c7927e8b17d88619": "fotos/retratos/kami/ret-kami-01.webp", "14779eb74f33714993b34aae972bbfe3": "fotos/retratos/kami/ret-kami-02.webp", "ed961a5e808b0222563e488e7c32ac79": "fotos/retratos/kami/ret-kami-03.webp", "95ea8650d064a5f9d2d403f99e18c370": "fotos/retratos/kami/ret-kami-04.webp", "37cc9e87e285c97bd3d88f45eef9cc74": "fotos/retratos/kami/ret-kami-05.webp", "0aac88ce4cf4b75306c82817120c43c0": "fotos/retratos/dj-kaos/ret-dj-01.webp", "68938100628b0d4e0f1bf2ca43dc24ef": "fotos/retratos/dj-kaos/ret-dj-02.webp", "d240f27f399731761392142c8f656c7e": "fotos/retratos/dj-kaos/ret-dj-03.webp", "febeea60c00f3c77b9938c7a4c664de4": "fotos/retratos/dj-kaos/ret-dj-04.webp", "7847c8825b35be12f513c5a57de2683d": "fotos/retratos/dj-kaos/ret-dj-05.webp", "4493f5aebeb27cc144fa48057f03f6cc": "fotos/retratos/pris/ret-pris-01.webp", "263c940844c750e8be832c6156024ee9": "fotos/retratos/pris/ret-pris-02.webp", "8b4f1bf0fa00f421a519d9dcf0898c70": "fotos/retratos/pris/ret-pris-03.webp", "d9fbd8dbb3fa05e2517a178030149268": "fotos/retratos/pris/ret-pris-04.webp", "9a34aa82006466f6e66e407cfa240c70": "fotos/retratos/pris/ret-pris-05.webp", "0ceabff8abd19598f84c1e94862acb0b": "fotos/retratos/pris/ret-pris-06.webp", "04a97446092a75460c1f45a5e8c66010": "fotos/retratos/sundury/ret-sun-01.webp", "760f9d87cff862e4b949f3840178221b": "fotos/retratos/sundury/ret-sun-02.webp", "4122d8a3979d4ec9cd7b892af40c6b9d": "fotos/retratos/sundury/ret-sun-03.webp", "d0b8250829d831e8db2393e858b49fb9": "fotos/retratos/sundury/ret-sun-04.webp", "55cf79e3572e84b2ce48fb24bc196740": "fotos/retratos/sundury/ret-sun-05.webp", "2f2026f3cfd5896e75933367c2b228e4": "fotos/retratos/sundury/ret-sun-06.webp", "563d49dce83c710e66d96de8b6452369": "fotos/retratos/sundury/ret-sun-07.webp", "6dec771637f9ed3d4f8392f74a0ff40b": "fotos/retratos/portada/portada-retratos.webp", "70cc9245201af62a928b85588eca5b08": "fotos/conciertos/tini/con-tini-02.webp", "3a9bd929f1d0fa43dbb0170c7ee4eb90": "fotos/conciertos/tini/con-tini-01.webp", "1f6e736c8d656ab7cb9b79469daed296": "fotos/conciertos/tini/con-tini-03.webp", "fbe49ffa6cb36505209895e8c8170719": "fotos/conciertos/tini/con-tini-04.webp", "50cde22db40ba8c33f76c0428292b685": "fotos/conciertos/tini/con-tini-05.webp", "08f78c697207594a4a74ac31790171bf": "fotos/conciertos/tini/con-tini-06.webp", "a47cc21c380044522bf860bc6b9f3453": "fotos/conciertos/soy-luna/con-soy-01.webp", "6823a6d414975c98981fbe8b6326bb12": "fotos/conciertos/soy-luna/con-soy-02.webp", "31a95ee9425d8384f609fa5c81f63ad8": "fotos/conciertos/soy-luna/con-soy-03.webp", "47046b3ab477c2f8700e050a2c3cb64d": "fotos/conciertos/soy-luna/con-soy-04.webp", "56b7d89c38f550d4e973cf6db963b4bd": "fotos/conciertos/soy-luna/con-soy-05.webp", "b36ba3796270af5d24e69bf4da4befd3": "fotos/conciertos/soy-luna/con-soy-06.webp", "0a43df6570662f21e9f79fa6382556be": "fotos/conciertos/soy-luna/con-soy-07.webp", "275adb8c061a36677119581ab738da74": "fotos/conciertos/soy-luna/con-soy-08.webp", "0b0d75040c1b2afd2ced8d71d8dc1b08": "fotos/conciertos/soy-luna/con-soy-09.webp", "5c815a5bb98d3cfb9e865d912d0d01f1": "fotos/conciertos/wwe/con-wwe-02.webp", "3b067dca498f7a3d27c624558977ed25": "fotos/conciertos/wwe/con-wwe-01.webp", "b05066881755dd5cc97a3230766246e8": "fotos/conciertos/wwe/con-wwe-03.webp", "44c6777516e0ba361b44c6493036c46b": "fotos/conciertos/wwe/con-wwe-04.webp", "5d0237440970169744f9822a2087f2bc": "fotos/conciertos/wwe/con-wwe-05.webp", "ad080e14d49b49612e77a51e39fabcf9": "fotos/conciertos/wwe/con-wwe-06.webp", "b1910f8a54eea96c0826ff0f28572068": "fotos/conciertos/wwe/con-wwe-07.webp", "1ab1d39b22be6e0df92beb13f14c3b68": "fotos/conciertos/wwe/con-wwe-09.webp", "fc75493fe557ff6a1cbb71f3c8e073a4": "fotos/conciertos/wwe/con-wwe-10.webp", "29b4a1c8088ea1d6f715a1b4135b0929": "fotos/conciertos/wwe/con-wwe-11.webp", "d93e1a9ab1fc055d239da0821bd7f299": "fotos/conciertos/wwe/con-wwe-12.webp", "5eb7724b5c7aa5116bfc16b580ea492a": "fotos/conciertos/queen/con-queen-01.webp", "f0d2940dc7b1b5708cc2bf26de3a3573": "fotos/conciertos/queen/con-queen-02.webp", "523bad0d6cf568ca8b136c7cd5631781": "fotos/conciertos/queen/con-queen-03.webp", "9789b99b3ba3b54cd94668cff641d855": "fotos/conciertos/queen/con-queen-04.webp", "0cd112651ec441fbc93c97d0d02e2ad4": "fotos/conciertos/queen/con-queen-05.webp", "df775099b4b6dfd18cb5e935f057c8b7": "fotos/conciertos/queen/con-queen-06.webp", "d14a9cdfe00a471321c633b1713012ff": "fotos/conciertos/queen/con-queen-07.webp", "b6ef87fa3145ddcdc40d46f490294ef7": "fotos/conciertos/queen/con-queen-08.webp", "698d00034cc3bcd4fb9898f0ed582c7b": "fotos/conciertos/queen/con-queen-09.webp", "bd49a109ea651137a9975bf53cc20580": "fotos/conciertos/queen/con-queen-10.webp", "90193b0ff2a1585bab15f38662aabebf": "fotos/conciertos/queen/con-queen-11.webp", "cf7ddabb665e39c46d089c277ec20fb1": "fotos/conciertos/queen/con-queen-12.webp", "fcf7d194c64cbb50c8c4794675c1c64d": "fotos/conciertos/queen/con-queen-13.webp", "eaa281ce403acdb84437053eeb63e86a": "fotos/conciertos/queen/con-queen-14.webp", "81c0b4028d77b9531d27004ad70640ab": "fotos/conciertos/michael-jackson/con-mj-01.webp", "51f62d0a6232225a39b99b14c2cedd77": "fotos/conciertos/michael-jackson/con-mj-02.webp", "29b127f2204ffddd88e70103c74e067a": "fotos/conciertos/michael-jackson/con-mj-03.webp", "10bf316dfd9592db3ec5e3550f7260ab": "fotos/conciertos/michael-jackson/con-mj-04.webp", "d130864069a453d13b8bb2d659ace068": "fotos/conciertos/michael-jackson/con-mj-05.webp", "dedca7c53eacf0a41afcdd5922b8573e": "fotos/conciertos/michael-jackson/con-mj-06.webp", "642dde6a60ef9a2f0a848d715c157272": "fotos/conciertos/michael-jackson/con-mj-07.webp", "05d9ba0ff06b18cf9ee7fb35bcb01a91": "fotos/conciertos/michael-jackson/con-mj-08.webp", "1794a0b3a534345e5247d3f477bdb519": "fotos/conciertos/michael-jackson/con-mj-09.webp", "aa952585c4d3cf4541de4eb93ffae478": "fotos/conciertos/michael-jackson/con-mj-10.webp", "82ae21dfd6dda9fc968b03505628119a": "fotos/conciertos/michael-jackson/con-mj-11.webp", "5fa2367d6d9ff82a31ed9da539d8c32f": "fotos/conciertos/michael-jackson/con-mj-12.webp", "93561f4b649e1beb44796c04afdd105a": "fotos/conciertos/bronco/con-bro-01.webp", "ea771666aa9b55c37bfc8896b5b0c1ce": "fotos/conciertos/bronco/con-bro-02.webp", "ca15e6dd97a119e8af2c834734ee50c0": "fotos/conciertos/bronco/con-bro-03.webp", "4c15dd2d202423939525cbf5251782bc": "fotos/conciertos/bronco/con-bro-04.webp", "42c47409a2290282f5385115c629497b": "fotos/conciertos/bronco/con-bro-05.webp", "7eebc5517370ccd9762b402e85237b20": "fotos/conciertos/bronco/con-bro-06.webp", "9e10a66a5a7476e228e14876e6ddd4da": "fotos/conciertos/bronco/con-bro-07.webp", "b8f37638a9d88a691a1f862cb0c040a6": "fotos/conciertos/yuri/con-yuri-06.webp", "5b59c076d421fed38deaf8b675c0cc0f": "fotos/conciertos/yuri/con-yuri-01.webp", "eebd3be018e838202c546464fb9ee92c": "fotos/conciertos/yuri/con-yuri-02.webp", "4998188d9c3c6baaaa5fc312f67dc467": "fotos/conciertos/yuri/con-yuri-03.webp", "99117e552bb479e9cf3e43831629dc20": "fotos/conciertos/yuri/con-yuri-04.webp", "1842e943422143dff82549546902dcb4": "fotos/conciertos/yuri/con-yuri-05.webp", "a892b08b72c90b6b38efe546b81239b4": "fotos/conciertos/yuri/con-yuri-07.webp", "79e5f212639706f768ff2b22e6bbb177": "fotos/conciertos/alfredo-olivas/con-alf-01.webp", "49177fee573a1b545765461f1b370919": "fotos/conciertos/alfredo-olivas/con-alf-02.webp", "9cff3d83738624630509263298a2e29e": "fotos/conciertos/alfredo-olivas/con-alf-03.webp", "fd14124262716a07f2a3dcc887a48f42": "fotos/conciertos/alfredo-olivas/con-alf-04.webp", "d902030b1dbf39ac4f3219f90c5c97f5": "fotos/conciertos/alfredo-olivas/con-alf-05.webp", "dd840a1aed69b36e0a416c2a8b85ed4d": "fotos/conciertos/alfredo-olivas/con-alf-06.webp", "4013f9adb23eff1c98059c2aef3860f3": "fotos/conciertos/alfredo-olivas/con-alf-07.webp", "6b8245ef90ace2502c50bc1265dece26": "fotos/conciertos/jamiroquai/con-jam-01.webp", "d522864418352b3ac7aa8b1875a4988c": "fotos/conciertos/jamiroquai/con-jam-02.webp", "31777130f6e889e4d285b80090a91adb": "fotos/conciertos/jamiroquai/con-jam-03.webp", "04afef3d5d39e616c2bde22b811f740a": "fotos/conciertos/jamiroquai/con-jam-04.webp", "4b2b8fd1ba55b0995c40c08f70edf933": "fotos/conciertos/jamiroquai/con-jam-05.webp", "f2272b86e633ba803b64846292aff54c": "fotos/conciertos/jamiroquai/con-jam-06.webp", "0df48e9d64486d60aeb07a045befe618": "fotos/conciertos/portada/portada-conciertos.webp", "2846968c05b30c9003012e07cf4fbfcc": "img/portada.webp", "93e3d1978aec4848fd318feea4be32dc": "img/retrato.webp", "e99553dd3176b1f85017a7adae15ffa9": "img/logo.png"};
+(function () {
+  const TPL = document.getElementById('tpl').textContent;
+  const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  // template -> tree
+  function parse(s) {
+    const root = { t: 'root', kids: [] }, st = [root];
+    const re = /<sc-(if|for)\b([^>]*)>|<\/sc-(if|for)>/g; let last = 0, mm;
+    const attr = (a, n) => { const r = new RegExp(n + '="\\{\\{\\s*([^}]*?)\\s*\\}\\}"').exec(a); return r && r[1]; };
+    while ((mm = re.exec(s))) {
+      if (mm.index > last) st[st.length - 1].kids.push({ t: 'html', s: s.slice(last, mm.index) });
+      if (mm[1]) {
+        const n = { t: mm[1], v: attr(mm[2], 'value'), l: attr(mm[2], 'list'), a: attr(mm[2], 'as'), kids: [] };
+        if (mm[1] === 'for') { const r = /as="([^"]+)"/.exec(mm[2]); n.a = r && r[1]; }
+        st[st.length - 1].kids.push(n); st.push(n);
+      } else st.pop();
+      last = re.lastIndex;
+    }
+    if (last < s.length) root.kids.push({ t: 'html', s: s.slice(last) });
+    return root;
+  }
+  const tree = parse(TPL);
+  const get = (path, sc) => { const p = path.split('.'); let v = sc[p[0]]; for (let i = 1; i < p.length && v != null; i++) v = v[p[i]]; return v; };
+  let H = [];
+  function html(s, sc) {
+    return s.replace(/\b(onClick|onScroll)="\{\{\s*([^}]*?)\s*\}\}"/g, (_, ev, p) => {
+      const f = get(p, sc); if (typeof f !== 'function') return '';
+      H.push(f); return (ev === 'onClick' ? 'data-h' : 'data-hs') + '="' + (H.length - 1) + '"';
+    }).replace(/\{\{\s*([^}]*?)\s*\}\}/g, (_, p) => esc(get(p, sc)));
+  }
+  let wid = 0;
+  function out(n, sc) {
+    if (n.t === 'html') return html(n.s, sc);
+    if (n.t === 'root') return n.kids.map((k) => out(k, sc)).join('');
+    if (n.t === 'if') return '<sc-w style="display:contents">' + (get(n.v, sc) ? n.kids.map((k) => out(k, sc)).join('') : '') + '</sc-w>';
+    if (n.t === 'for') {
+      const list = get(n.l, sc) || [];
+      return '<sc-w style="display:contents">' + list.map((it) => n.kids.map((k) => out(k, Object.assign({}, sc, { [n.a]: it }))).join('')).join('') + '</sc-w>';
+    }
+    return '';
+  }
+  // minimal DOM morph so persistent nodes keep scroll position and animations
+  function morph(a, b) {
+    const ak = a.childNodes, bk = b.childNodes;
+    for (let i = 0; i < bk.length; i++) {
+      const x = ak[i], y = bk[i];
+      if (!x) { a.appendChild(y.cloneNode(true)); continue; }
+      if (x.nodeType !== y.nodeType || x.nodeName !== y.nodeName) { a.replaceChild(y.cloneNode(true), x); continue; }
+      if (y.nodeType === 3 || y.nodeType === 8) { if (x.nodeValue !== y.nodeValue) x.nodeValue = y.nodeValue; continue; }
+      for (const at of Array.from(x.attributes)) if (!y.hasAttribute(at.name)) x.removeAttribute(at.name);
+      for (const at of Array.from(y.attributes)) if (x.getAttribute(at.name) !== at.value) x.setAttribute(at.name, at.value);
+      morph(x, y);
+    }
+    while (a.childNodes.length > bk.length) a.removeChild(a.lastChild);
+  }
+  const host = document.getElementById('app');
+  const comp = new Component({});
+  comp._render = function () {
+    H = [];
+    const vals = comp.renderVals();
+    const tmp = document.createElement('div'); tmp.innerHTML = out(tree, vals);
+    morph(host, tmp);
+  };
+  const call = (el, e, attr) => {
+    let stopped = false;
+    const ev = { currentTarget: el, target: e.target, preventDefault: () => e.preventDefault(), stopPropagation: () => { stopped = true; } };
+    const f = H[+el.getAttribute(attr)]; if (f) f(ev);
+    return stopped;
+  };
+  host.addEventListener('click', (e) => {
+    for (let el = e.target; el && el !== host.parentNode; el = el.parentNode) {
+      if (el.getAttribute && el.hasAttribute('data-h') && call(el, e, 'data-h')) break;
+    }
+  });
+  host.addEventListener('scroll', (e) => { const el = e.target; if (el.getAttribute && el.hasAttribute('data-hs')) call(el, e, 'data-hs'); }, true);
+  comp._mounted = true; comp._render();
+})();
+
+</script>
+</body>
+</html>
